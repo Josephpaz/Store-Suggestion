@@ -1,3 +1,7 @@
+body{
+    margin: 0px;
+    padding: 0px;
+}
 h1, h2,h3, h4{
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-weight: normal;
@@ -5,6 +9,7 @@ h1, h2,h3, h4{
 
 h1, h2{
     text-align: center;
+    color: white;
 }
 
 h3{
@@ -40,6 +45,10 @@ li {
     counter-increment: listNumbering;
 }
 
+.header-content{
+    background-color: #203377;
+    padding: 12px;
+}
 
 @media screen and (max-width: 768px) {
     *{
@@ -47,9 +56,10 @@ li {
     }
 
     textarea{
-        width: 60%;
+        width: 70%;
+        text-align: center;
     }
-   
+
    li{
        list-style-type: none;
    }
