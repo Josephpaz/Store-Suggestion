@@ -62,7 +62,7 @@ export default class App extends Component {
         <div className="header-content">
           <h1>PESQUISA DE SATISFAÇÃO DO CLIENTE</h1>
           {/* <img src={info_store_logo} alt="info store logo" /> */}
-          <h2>Compartilhe conosco sua experiência na Info Store</h2>
+          <h2>Compartilhe conosco sua opinião e experiência na Info Store</h2>
         </div>
         <div className="content">
           <ol>
