@@ -60,9 +60,9 @@ export default class App extends Component {
     return (
       <div className="App">
         <div className="header-content">
-          <h1>Sugestões Info Store</h1>
+          <h1>PESQUISA DE SATISFAÇÃO DO CLIENTE</h1>
           {/* <img src={info_store_logo} alt="info store logo" /> */}
-          <h2>Deixe-nos sua opnião sobre a sua experiência com a Info Store</h2>
+          <h2>Compartilhe conosco sua experiência na Info Store</h2>
         </div>
         <div className="content">
           <ol>
