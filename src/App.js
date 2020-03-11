@@ -55,22 +55,26 @@ export default class App extends Component {
 
   onChangeMotivo(e) {
     this.setState({
-      motivo: e.target.value
+      motivo: e.target.value,
     });
   }
 
   onChangeSugestao(e) {
     this.setState({
-      sugestao: e.target.value
+      sugestao: e.target.value,
     });
   }
 
   add_suggestion_preco(e) {
-
-    let a = this.state.resposta.preco;
-    a = e.target.className;
-    console.log("resposta do cliente em relação ao preco: " + a);
-
+    this.setState(prevState => {
+      let resposta = Object.assign({}, prevState.resposta);
+      resposta.preco = e.target.className;
+      return{resposta} 
+    })//logica baseada pelo link https://www.freecodecamp.org/forum/t/reactjs-using-setstate-to-update-a-single-property-on-an-object/146772/6
+    //por enquanto apresenta erro, quando printada pelo console o objeto resposta aparece como undefined
+    let a = e.target.className
+    console.log("resposta do cliente em relação ao preco: " + JSON.stringify(this.resposta) + " a: " + a);
+    //mas, conversando com o caio hoje estou pensanso em mudar para array e nao mais objeto.
   }
 
   add_suggestion_mix_produtos(e) {
@@ -142,18 +146,28 @@ export default class App extends Component {
   }
 
   add_suggestion_recomendar_conhecidos(e) {
-    let a = this.state.resposta.recomendar_conhecidos;
-    a = e.target.className;
-    console.log("resposta do cliente em relação à recomendação: " + a);
+    this.setState(function (prevState, props) {
+      return {
+        resposta: {
+          recomendar_conhecidos: e.target.className,
+          motivo: this.state.motivo
+        }
+      }
+    });
+    console.log("resposta do cliente em relação à recomendação: " + this.state.resposta.recomendar_conhecidos);
+    console.log("motivo: " + this.state.motivo)
   }
 
   onSubmit(e) {
     e.preventDefault();
-    this.resposta.motivo = this.state.motivo;
-    this.resposta.sugestao = this.state.sugestao;
-    const obj_resposta = this.resposta;
-    alert('obj: '+obj_resposta);
-    console.log("Obj: "+obj_resposta);
+    this.setState({
+      resposta: {
+        motivo: 'this.state.motivo',
+        sugestao: this.state.sugestao
+      }
+    })
+    alert('obj: ' + JSON.stringify(this.resposta.motivo));
+    console.log("Obj: " + JSON.stringify(this.resposta.sugestao));
   }
   render() {
     return (
@@ -280,7 +294,7 @@ export default class App extends Component {
               <li>
                 <h3>Você gostaria de acrescentar algo mais para futuras melhorias?</h3>
                 <h4>Sugestão:</h4>
-                <textarea cols="80" rows="6" value={this.state.sugestao} onChange={this.onChangeSugestao} /> <br />
+                <textarea style={{ fontFamily: 'Segoe UI' }} cols="80" rows="6" value={this.state.sugestao} onChange={this.onChangeSugestao} /> <br />
                 <input type="submit" value="enviar" />
               </li>
             </ol>
