@@ -42,7 +42,6 @@ export default class App extends Component {
     this.add_suggestion_consultor_vendas = this.add_suggestion_consultor_vendas.bind(this);
     this.add_suggestion_rapidez_entrega = this.add_suggestion_rapidez_entrega.bind(this);
     this.add_suggestion_ambiente_agradavel = this.add_suggestion_ambiente_agradavel.bind(this);
-    this.add_suggestions_motivos = this.add_suggestions_motivos.bind(this);
     this.add_suggestion_consultor_vendas = this.add_suggestion_consultor_vendas.bind(this);
     this.add_suggestion_equipe_balcao = this.add_suggestion_equipe_balcao.bind(this);
     this.add_suggestion_equipe_caixa = this.add_suggestion_equipe_caixa.bind(this);
@@ -57,105 +56,151 @@ export default class App extends Component {
     this.setState({
       motivo: e.target.value,
     });
+
+    this.setState(prevState => {
+      let resposta = Object.assign({ ...prevState.resposta }, prevState.resposta);
+      resposta.motivo = this.state.motivo;
+      return { resposta }
+    });
+
+    console.log("resposta do cliente em relação ao(s) motivo(s): " + JSON.stringify(this.state.resposta.motivo));
   }
 
   onChangeSugestao(e) {
     this.setState({
       sugestao: e.target.value,
     });
+
+    this.setState(prevState => {
+      let resposta = Object.assign({ ...prevState.resposta }, prevState.resposta);
+      resposta.motivo = this.state.sugestao;
+      return { resposta }
+    });
+
+    console.log("resposta do cliente em relação a(s) sugestao(oes): " + JSON.stringify(this.state.resposta.sugestao));
   }
 
   add_suggestion_preco(e) {
+    let img_className = e.target.className;
+
     this.setState(prevState => {
-      let resposta = Object.assign({}, prevState.resposta);
-      resposta.preco = e.target.className;
-      return{resposta} 
-    })//logica baseada pelo link https://www.freecodecamp.org/forum/t/reactjs-using-setstate-to-update-a-single-property-on-an-object/146772/6
-    //por enquanto apresenta erro, quando printada pelo console o objeto resposta aparece como undefined
-    let a = e.target.className
-    console.log("resposta do cliente em relação ao preco: " + JSON.stringify(this.resposta) + " a: " + a);
-    //mas, conversando com o caio hoje estou pensanso em mudar para array e nao mais objeto.
+      let resposta = Object.assign({ ...prevState.resposta }, prevState.resposta);
+      resposta.preco = img_className;
+      return { resposta }
+    });
+
+    console.log("resposta do cliente em relação ao preco: " + JSON.stringify(this.state.resposta.preco) + " a: " + img_className);
   }
 
   add_suggestion_mix_produtos(e) {
 
-    let a = this.state.resposta.mix_produtos;
-    a = e.target.className;
-    console.log("resposta do cliente em relção ao mix de produtos: " + a);
+    let img_className = e.target.className;
 
+    this.setState(prevState => {
+      let resposta = Object.assign({ ...prevState.resposta }, prevState.resposta);
+      resposta.mix_produtos = img_className;
+      return { resposta }
+    });
+    console.log("resposta do cliente em relação ao mix de produtos: " + JSON.stringify(this.state.resposta.mix_produtos));
   }
 
   add_suggestion_atendimento(e) {
-    let a = this.state.resposta.atendimento;
-    a = e.target.className;
-    console.log("resposta do cliente em relação ao atendimento: " + a);
+    let img_className = e.target.className;
+    this.setState(prevState => {
+      let resposta = Object.assign({ ...prevState.resposta }, prevState.resposta);
+      resposta.atendimento = img_className;
+      return { resposta }
+    });
+    console.log("resposta do cliente em relação ao atendimento: " + JSON.stringify(this.state.resposta.atendimento));
   }
 
   add_suggestion_rapidez_entrega(e) {
-    let a = this.state.resposta.rapidez_entrega;
-    a = e.target.className;
-    console.log("resposta do cliente em relação à relação da rapidez de entrega: " + a);
+    let img_className = e.target.className;
+    this.setState(prevState => {
+      let resposta = Object.assign({ ...prevState.resposta }, prevState.resposta);
+      resposta.rapidez_entrega = img_className;
+      return { resposta }
+    });
+    console.log("resposta do cliente em relação a rapidez na entrega: " + JSON.stringify(this.state.resposta.rapidez_entrega));
   }
 
   add_suggestion_ambiente_agradavel(e) {
-    let a = this.state.resposta.ambiente_agradavel;
-    a = e.target.className;
-    console.log("resposta do cliente em relação ao ambiente: " + a);
-  }
-
-  add_suggestions_motivos(e) {
-    let a = this.state.resposta.sugestao;
-    a = e.target.className;
-    console.log("resposta do cliente em relação ao(s) motivo(s): " + a);
+    let img_className = e.target.className;
+    this.setState(prevState => {
+      let resposta = Object.assign({ ...prevState.resposta }, prevState.resposta);
+      resposta.ambiente_agradavel = img_className;
+      return { resposta }
+    });
+    console.log("resposta do cliente em relação ao ambiente: " + JSON.stringify(this.state.resposta.ambiente_agradavel));
   }
 
   add_suggestion_consultor_vendas(e) {
-    let a = this.state.resposta.consultor_venda;
-    a = e.target.className;
-    console.log("respota do cleinte em relação ao consultor de vendas: " + a);
+    let img_className = e.target.className;
+    this.setState(prevState => {
+      let resposta = Object.assign({ ...prevState.resposta }, prevState.resposta);
+      resposta.consultor_venda = img_className;
+      return { resposta }
+    });
+    console.log("resposta do cliente em relação ao consultor de vendas" + JSON.stringify(this.state.resposta.consultor_venda));
   }
 
   add_suggestion_equipe_balcao(e) {
-    let a = this.state.resposta.equipe_balcao;
-    a = e.target.className;
-    console.log("resposta do cliente em relação a equipe do balcao: " + a);
+    let img_className = e.target.className;
+    this.setState(prevState => {
+      let resposta = Object.assign({ ...prevState.resposta }, prevState.resposta);
+      resposta.equipe_balcao = img_className;
+      return { resposta }
+    });
+    console.log("resposta do cliente em relação a equipe do balcao: " + JSON.stringify(this.state.resposta.equipe_balcao));
   }
 
   add_suggestion_equipe_caixa(e) {
-    let a = this.state.resposta.equipe_caixa;
-    a = e.target.className;
-    console.log("respota do cliente em relação a equipe do caixa: " + a);
+    let img_className = e.target.className;
+    this.setState(prevState => {
+      let resposta = Object.assign({ ...prevState.resposta }, prevState.resposta);
+      resposta.equipe_caixa = img_className;
+    });
+    console.log("resposta do cliente em relação a equipe do caixa: " + JSON.stringify(this.state.resposta.equipe_caixa));
   }
 
   add_suggestion_equipe_entrega(e) {
-    let a = this.state.resposta.equipe_entrega;
-    a = e.target.className;
-    console.log("respota do cliente em relação a equipe de entrega: " + a);
+    let img_className = e.target.className;
+    this.setState(prevState => {
+      let resposta = Object.assign({ ...prevState.resposta }, prevState.resposta);
+      resposta.equipe_entrega = img_className;
+      return { resposta }
+    });
+    console.log("resposta do cliente em relação a equipe de entrega: " + JSON.stringify(this.state.resposta.equipe_entrega));
   }
 
   add_suggestion_expectativa(e) {
-    let a = this.state.resposta.expectativa;
-    a = e.target.className;
-    console.log("resposta do cliente em relação à expectativa: " + a);
+    let img_className = e.target.className;
+    this.setState(prevState => {
+      let resposta = Object.assign({ ...prevState.resposta }, prevState.resposta);
+      resposta.expectativa = img_className;
+      return { resposta }
+    });
+    console.log("resposta do cliente em relação à expectativa: " + JSON.stringify(this.state.resposta.expectativa));
   }
 
   add_suggestion_possibilidade_nova_compra(e) {
-    let a = this.state.resposta.possibilidade_nova_compra;
-    a = e.target.className;
-    console.log("resposta do cliente em relação a nova possibilidade de compra: " + a);
+    let img_className = e.target.className;
+    this.setState(prevState => {
+      let resposta = Object.assign({ ...prevState.resposta }, prevState.resposta);
+      resposta.possibilidade_nova_compra = img_className;
+      return { resposta }
+    });
+    console.log("resposta do cliente em relação a nova possibilidade de compra: " + img_className);
   }
 
   add_suggestion_recomendar_conhecidos(e) {
-    this.setState(function (prevState, props) {
-      return {
-        resposta: {
-          recomendar_conhecidos: e.target.className,
-          motivo: this.state.motivo
-        }
-      }
+    let img_className = e.target.className;
+    this.setState(prevState => {
+      let resposta = Object.assign({ ...prevState.resposta }, prevState.resposta);
+      resposta.recomendar_conhecidos = img_className;
+      return { resposta }
     });
-    console.log("resposta do cliente em relação à recomendação: " + this.state.resposta.recomendar_conhecidos);
-    console.log("motivo: " + this.state.motivo)
+    console.log("resposta do cliente em relação da recomendação: " + JSON.stringify(this.state.resposta.recomendar_conhecidos));
   }
 
   onSubmit(e) {
@@ -290,7 +335,7 @@ export default class App extends Component {
                   <img src={feliz} alt="emoji feliz" className="bom" onClick={this.add_suggestion_recomendar_conhecidos} />
                   <img src={sorridente} alt="emoji sorridente" className="excelente" onClick={this.add_suggestion_recomendar_conhecidos} />
                 </div>
-              </li> <br /> <br />
+              </li> <br />
               <li>
                 <h3>Você gostaria de acrescentar algo mais para futuras melhorias?</h3>
                 <h4>Sugestão:</h4>
