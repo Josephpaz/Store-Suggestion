@@ -19,17 +19,17 @@ export default class App extends Component {
         freight_id: null,
         price: '',
         product_mix: '',
-        costumer_service: '',
+        customer_service: '',
         delivery_speed: '',
         pleasant_environment: '',
         purchase_motivation: '',
-        sales_consultans: '',
+        sales_consultants: '',
         service_team: '',
         cash_team: '',
         delivery_team: '',
         customer_expectations: '',
         new_purchases: '',
-        recomendar_conhecidos: '',
+        recommendation: '',
         complementary_suggestion: '',
       }
     };
@@ -39,17 +39,17 @@ export default class App extends Component {
     this.onChangeSuggestion = this.onChangeSuggestion.bind(this);
     this.add_suggestion_price = this.add_suggestion_price.bind(this);
     this.add_suggestion_product_mix = this.add_suggestion_product_mix.bind(this);
-    this.add_suggestion_costumer_service = this.add_suggestion_costumer_service.bind(this);
-    this.add_suggestion_sales_consultans = this.add_suggestion_sales_consultans.bind(this);
+    this.add_suggestion_customer_service = this.add_suggestion_customer_service.bind(this);
+    this.add_suggestion_sales_consultants = this.add_suggestion_sales_consultants.bind(this);
     this.add_suggestion_delivery_speed = this.add_suggestion_delivery_speed.bind(this);
     this.add_suggestion_pleasant_motivation = this.add_suggestion_pleasant_motivation.bind(this);
-    this.add_suggestion_sales_consultans = this.add_suggestion_sales_consultans.bind(this);
+    this.add_suggestion_sales_consultants = this.add_suggestion_sales_consultants.bind(this);
     this.add_suggestion_service_team = this.add_suggestion_service_team.bind(this);
     this.add_suggestion_cash_team = this.add_suggestion_cash_team.bind(this);
     this.add_suggestion_delivery_team = this.add_suggestion_delivery_team.bind(this);
     this.add_suggestion_customer_expectations = this.add_suggestion_customer_expectations.bind(this);
     this.add_suggestion_new_purchases = this.add_suggestion_new_purchases.bind(this);
-    this.add_suggestion_recomendar_conhecidos = this.add_suggestion_recomendar_conhecidos.bind(this);
+    this.add_suggestion_recommendation = this.add_suggestion_recommendation.bind(this);
     this.parserToNumber = this.parserToNumber.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
   }
@@ -106,14 +106,14 @@ export default class App extends Component {
     console.log("resposta do cliente em relação ao mix de produtos: " + JSON.stringify(this.state.resposta.product_mix));
   }
 
-  add_suggestion_costumer_service(e) {
+  add_suggestion_customer_service(e) {
     let img_className = this.parserToNumber(e.target.className);
     this.setState(prevState => {
       let resposta = Object.assign({ ...prevState.resposta }, prevState.resposta);
-      resposta.costumer_service = img_className;
+      resposta.customer_service = img_className;
       return { resposta }
     });
-    console.log("resposta do cliente em relação ao costumer_service: " + JSON.stringify(this.state.resposta.costumer_service));
+    console.log("resposta do cliente em relação ao customer_service: " + JSON.stringify(this.state.resposta.customer_service));
   }
 
   add_suggestion_delivery_speed(e) {
@@ -136,14 +136,14 @@ export default class App extends Component {
     console.log("resposta do cliente em relação ao ambiente: " + JSON.stringify(this.state.resposta.pleasant_environment));
   }
 
-  add_suggestion_sales_consultans(e) {
+  add_suggestion_sales_consultants(e) {
     let img_className = this.parserToNumber(e.target.className);
     this.setState(prevState => {
       let resposta = Object.assign({ ...prevState.resposta }, prevState.resposta);
-      resposta.sales_consultans = img_className;
+      resposta.sales_consultants = img_className;
       return { resposta }
     });
-    console.log("resposta do cliente em relação ao consultor de vendas" + JSON.stringify(this.state.resposta.sales_consultans));
+    console.log("resposta do cliente em relação ao consultor de vendas" + JSON.stringify(this.state.resposta.sales_consultants));
   }
 
   add_suggestion_service_team(e) {
@@ -196,15 +196,14 @@ export default class App extends Component {
     console.log("resposta do cliente em relação a nova possibilidade de compra: " + this.state.resposta.new_purchases);
   }
 
-  add_suggestion_recomendar_conhecidos(e) {
+  add_suggestion_recommendation(e) {
     let img_className = this.parserToNumber(e.target.className);
-    console.log(img_className);
     this.setState(prevState => {
       let resposta = Object.assign({ ...prevState.resposta }, prevState.resposta);
-      resposta.recomendar_conhecidos = img_className;
+      resposta.recommendation = img_className;
       return { resposta }
     });
-    console.log("resposta do cliente em relação da recomendação: " + JSON.stringify(this.state.resposta.recomendar_conhecidos));
+    console.log("resposta do cliente em relação da recomendação: " + JSON.stringify(this.state.resposta.recommendation));
   }
   parserToNumber(e) {
 
@@ -250,13 +249,13 @@ export default class App extends Component {
                   <img src={feliz} alt="emoji feliz" className="bom" onClick={this.add_suggestion_product_mix} />
                   <img src={sorridente} alt="emoji sorridente" className="excelente" onClick={this.add_suggestion_product_mix} />
                 </div>
-                <h4>costumer_service</h4>
+                <h4>customer_service</h4>
                 <div className="emojis-box">
-                  <img src={triste} alt="emoji triste" className="pessimo" onClick={this.add_suggestion_costumer_service} />
-                  <img src={insatisfeito} alt="emoji confuso" className="insatisfeito" onClick={this.add_suggestion_costumer_service} />
-                  <img src={neutro} alt="emoji neutro" className="neutro" onClick={this.add_suggestion_costumer_service} />
-                  <img src={feliz} alt="emoji feliz" className="bom" onClick={this.add_suggestion_costumer_service} />
-                  <img src={sorridente} alt="emoji sorridente" className="excelente" onClick={this.add_suggestion_costumer_service} />
+                  <img src={triste} alt="emoji triste" className="pessimo" onClick={this.add_suggestion_customer_service} />
+                  <img src={insatisfeito} alt="emoji confuso" className="insatisfeito" onClick={this.add_suggestion_customer_service} />
+                  <img src={neutro} alt="emoji neutro" className="neutro" onClick={this.add_suggestion_customer_service} />
+                  <img src={feliz} alt="emoji feliz" className="bom" onClick={this.add_suggestion_customer_service} />
+                  <img src={sorridente} alt="emoji sorridente" className="excelente" onClick={this.add_suggestion_customer_service} />
                 </div>
                 <h4>Rapidez na Entrega</h4>
                 <div className="emojis-box">
@@ -281,11 +280,11 @@ export default class App extends Component {
                 <h3>O quão satisfeito você ficou com nosso serviço?</h3>
                 <h4>Consultores de Vendas</h4>
                 <div className="emojis-box">
-                  <img src={triste} alt="emoji triste" className="pessimo" onClick={this.add_suggestion_sales_consultans} />
-                  <img src={insatisfeito} alt="emoji confuso" className="insatisfeito" onClick={this.add_suggestion_sales_consultans} />
-                  <img src={neutro} alt="emoji neutro" className="neutro" onClick={this.add_suggestion_sales_consultans} />
-                  <img src={feliz} alt="emoji feliz" className="bom" onClick={this.add_suggestion_sales_consultans} />
-                  <img src={sorridente} alt="emoji sorridente" className="excelente" onClick={this.add_suggestion_sales_consultans} />
+                  <img src={triste} alt="emoji triste" className="pessimo" onClick={this.add_suggestion_sales_consultants} />
+                  <img src={insatisfeito} alt="emoji confuso" className="insatisfeito" onClick={this.add_suggestion_sales_consultants} />
+                  <img src={neutro} alt="emoji neutro" className="neutro" onClick={this.add_suggestion_sales_consultants} />
+                  <img src={feliz} alt="emoji feliz" className="bom" onClick={this.add_suggestion_sales_consultants} />
+                  <img src={sorridente} alt="emoji sorridente" className="excelente" onClick={this.add_suggestion_sales_consultants} />
                 </div>
                 <h4>Equipe Balcão</h4>
                 <div className="emojis-box">
@@ -335,11 +334,11 @@ export default class App extends Component {
               <li>
                 <h3>O quanto você recomendaria a empresa Info Store para seus amigos e/ou parentes?</h3>
                 <div className="emojis-box">
-                  <img src={triste} alt="emoji triste" className="pessimo" onClick={this.add_suggestion_recomendar_conhecidos} />
-                  <img src={insatisfeito} alt="emoji confuso" className="insatisfeito" onClick={this.add_suggestion_recomendar_conhecidos} />
-                  <img src={neutro} alt="emoji neutro" className="neutro" onClick={this.add_suggestion_recomendar_conhecidos} />
-                  <img src={feliz} alt="emoji feliz" className="bom" onClick={this.add_suggestion_recomendar_conhecidos} />
-                  <img src={sorridente} alt="emoji sorridente" className="excelente" onClick={this.add_suggestion_recomendar_conhecidos} />
+                  <img src={triste} alt="emoji triste" className="pessimo" onClick={this.add_suggestion_recommendation} />
+                  <img src={insatisfeito} alt="emoji confuso" className="insatisfeito" onClick={this.add_suggestion_recommendation} />
+                  <img src={neutro} alt="emoji neutro" className="neutro" onClick={this.add_suggestion_recommendation} />
+                  <img src={feliz} alt="emoji feliz" className="bom" onClick={this.add_suggestion_recommendation} />
+                  <img src={sorridente} alt="emoji sorridente" className="excelente" onClick={this.add_suggestion_recommendation} />
                 </div>
               </li> <br />
               <li>
