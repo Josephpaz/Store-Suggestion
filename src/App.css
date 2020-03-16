@@ -18,17 +18,23 @@ h3{
 
 h4{
     font-size: 20px;
+    margin-top: 20px;
 }
-
+.emojis-box{
+    margin-top: 12px;
+    margin-bottom: 12px;
+}
 img{
-    width: 45px;
+    width: 46px;
     padding: 5px;
+    margin: 12px;
 }
 
 textarea{
     padding: 5px 8px;
     border-radius: 5px;
     resize: none;
+    width: 50%;
 }
 
 img:hover {
@@ -55,6 +61,11 @@ li {
         text-align: center;
     }
 
+    h1{font-size: 24px;}
+    h2{font-size: 22px;}
+    h3{font-size: 20px;}
+    h4{font-size: 20px; margin-top: 15px; margin-bottom: 5px;}
+
     textarea{
         width: 70%;
         text-align: center;
@@ -62,17 +73,26 @@ li {
 
    li{
        list-style-type: none;
-       margin: 0px;
    }
 
    img{
-       margin: 0px;
+       margin-top: 5px;
+       margin-bottom: 5px;
        padding: 0px;
        margin-right: 4px;
+   }
+   
+   ol{
+       padding: 0px;
    }
 
    h1, h2,h3, h4{ 
     padding: 0px;
    }
-
+   
+   .btn-primary{
+       margin-top: 12px;
+       width: 70%;
+       margin-bottom: 2px;
+   }
 }
