@@ -83,8 +83,8 @@ export default class App extends Component {
   }
 
   add_suggestion_price(e) {
+    
     let img_className = this.parserToNumber(e.target.className);
-
     this.setState(prevState => {
       let resposta = Object.assign({ ...prevState.resposta }, prevState.resposta);
       resposta.price = img_className;
@@ -206,7 +206,6 @@ export default class App extends Component {
     console.log("resposta do cliente em relação da recomendação: " + JSON.stringify(this.state.resposta.recommendation));
   }
   parserToNumber(e) {
-
     if (e === 'pessimo') return 1;
     if (e === 'insatisfeito') return 2;
     if (e === 'neutro') return 3;
@@ -217,6 +216,21 @@ export default class App extends Component {
 
   onSubmit(e) {
     e.preventDefault();
+    if (this.state.motivo === '') {
+      this.setState(prevState => {
+        let resposta = Object.assign({ ...prevState.resposta }, prevState.resposta);
+        resposta.purchase_motivation = null;
+        return { resposta }
+      });
+    }
+    if (this.state.sugestao === '') {
+      this.setState(prevState => {
+        let resposta = Object.assign({ ...prevState.resposta }, prevState.resposta);
+        resposta.complementary_suggestion = null
+        return { resposta }
+      });
+    }
+
     axios.post('http://logistica.navegam.com.br:3000/api/v4/frete/feedback', this.state.resposta).then(res => console.log(res.data));
     // window.location.reload();
     console.log("Obj: " + JSON.stringify(this.state.resposta));
