@@ -24,7 +24,7 @@ export default class App extends Component {
       motivo: '',
       sugestao: '',
       resposta: {
-        freight_id: null,
+        freight_id: '',
         price: '',
         product_mix: '',
         customer_service: '',
@@ -62,6 +62,8 @@ export default class App extends Component {
     this.onSubmit = this.onSubmit.bind(this);
   }
 
+
+
   onChangeMotivo(e) {
     this.setState({
       motivo: e.target.value,
@@ -96,6 +98,7 @@ export default class App extends Component {
     this.setState(prevState => {
       let resposta = Object.assign({ ...prevState.resposta }, prevState.resposta);
       resposta.price = img_className;
+      resposta.freight_id = parseInt(freight_id, 10);
       return { resposta }
     });
 
@@ -121,7 +124,7 @@ export default class App extends Component {
       resposta.customer_service = img_className;
       return { resposta }
     });
-    console.log("resposta do cliente em relação ao customer_service: " + JSON.stringify(this.state.resposta.customer_service));
+    console.log("resposta do cliente em relação ao atendimento: " + JSON.stringify(this.state.resposta.customer_service));
   }
 
   add_suggestion_delivery_speed(e) {
@@ -191,7 +194,7 @@ export default class App extends Component {
       resposta.customer_expectations = img_className;
       return { resposta }
     });
-    console.log("resposta do cliente em relação à customer_expectations: " + JSON.stringify(this.state.resposta.customer_expectations));
+    console.log("resposta do cliente em relação à expectativas: " + JSON.stringify(this.state.resposta.customer_expectations));
   }
 
   add_suggestion_new_purchases(e) {
@@ -225,12 +228,7 @@ export default class App extends Component {
 
   onSubmit(e) {
     e.preventDefault();
-    this.setState(prevState => {
-      let resposta = Object.assign({ ...prevState.resposta }, prevState.resposta);
-      resposta.freight_id = freight_id;
-      return { resposta }
-    });
-    console.log('id: '+ freight_id+'obj_id: '+ JSON.stringify(this.state.resposta.freight_id));
+    console.log('id: ' + freight_id + 'obj_id: ' + JSON.stringify(this.state.resposta.freight_id));
     if (this.state.motivo === '') {
       this.setState(prevState => {
         let resposta = Object.assign({ ...prevState.resposta }, prevState.resposta);
@@ -245,7 +243,6 @@ export default class App extends Component {
         return { resposta }
       });
     }
-
     axios.post('http://logistica.navegam.com.br:3000/api/v4/frete/feedback', this.state.resposta).then(res => console.log(res.data));
     // window.location.reload();
     console.log("Obj: " + JSON.stringify(this.state.resposta));
