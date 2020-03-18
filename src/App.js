@@ -5,6 +5,9 @@ import triste from './assets/icons/icons8-triste-50.png';
 import insatisfeito from './assets/icons/icons8-insatisfeito-50.png';
 import neutro from './assets/icons/icons8-neutro-50.png';
 import sorridente from './assets/icons/icons8-sorridente-50.png';
+import info_store_logo from './assets/img/info_store_logo.png';
+import termometro from './assets/img/termometro-01.png';
+import footer from './assets/img/footer_prancheta.png';
 import axios from 'axios';
 
 export default class App extends Component {
@@ -83,7 +86,7 @@ export default class App extends Component {
   }
 
   add_suggestion_price(e) {
-    
+
     let img_className = this.parserToNumber(e.target.className);
     this.setState(prevState => {
       let resposta = Object.assign({ ...prevState.resposta }, prevState.resposta);
@@ -206,6 +209,7 @@ export default class App extends Component {
     console.log("resposta do cliente em relação da recomendação: " + JSON.stringify(this.state.resposta.recommendation));
   }
   parserToNumber(e) {
+
     if (e === 'pessimo') return 1;
     if (e === 'insatisfeito') return 2;
     if (e === 'neutro') return 3;
@@ -239,15 +243,23 @@ export default class App extends Component {
     return (
       <div className="App">
         <div className="header-content">
-          <h1>PESQUISA DE SATISFAÇÃO DO CLIENTE</h1>
-          <h2>Compartilhe conosco sua opinião e experiência na Info Store</h2>
+          <div>
+            <h1 style={{ fontWeight: 'bold' }}>PESQUISA DE SATISFAÇÃO DO CLIENTE</h1>
+            <h2>Compartilhe conosco sua opinião e experiência na Info Store</h2>
+          </div>
+          <div>
+            <img className="logo_info_store" src={info_store_logo} alt="logo_info_store" />
+          </div>
+        </div>
+        <div>
+          <img className="termometro" src={termometro} alt="termometro" />
         </div>
         <div className="content">
           <form onSubmit={this.onSubmit}>
             <ol>
               <li>
-                <h3 style={{ marginTop: '14px' }}>O que motiva você a comprar com a Info Store?</h3>
-                <h4>Preço</h4>
+                <h3 style={{ marginTop: '14px' }}>O QUE MOTIVA VOCÊ A COMPRAR COM A INFO STORE?</h3>
+                <h4>PREÇO</h4>
                 <div className="emojis-box">
                   <img src={triste} alt="emoji triste" className="pessimo" onClick={this.add_suggestion_price} />
                   <img src={insatisfeito} alt="emoji confuso" className="insatisfeito" onClick={this.add_suggestion_price} />
@@ -255,7 +267,7 @@ export default class App extends Component {
                   <img src={feliz} alt="emoji feliz" className="bom" onClick={this.add_suggestion_price} />
                   <img src={sorridente} alt="emoji sorridente" className="excelente" onClick={this.add_suggestion_price} />
                 </div>
-                <h4>Mix de Produtos</h4>
+                <h4>MIX DE PRODUTOS</h4>
                 <div className="emojis-box">
                   <img src={triste} alt="emoji triste" className="pessimo" onClick={this.add_suggestion_product_mix} />
                   <img src={insatisfeito} alt="emoji confuso" className="insatisfeito" onClick={this.add_suggestion_product_mix} />
@@ -263,7 +275,7 @@ export default class App extends Component {
                   <img src={feliz} alt="emoji feliz" className="bom" onClick={this.add_suggestion_product_mix} />
                   <img src={sorridente} alt="emoji sorridente" className="excelente" onClick={this.add_suggestion_product_mix} />
                 </div>
-                <h4>customer_service</h4>
+                <h4>ATENDIMENTO</h4>
                 <div className="emojis-box">
                   <img src={triste} alt="emoji triste" className="pessimo" onClick={this.add_suggestion_customer_service} />
                   <img src={insatisfeito} alt="emoji confuso" className="insatisfeito" onClick={this.add_suggestion_customer_service} />
@@ -271,7 +283,7 @@ export default class App extends Component {
                   <img src={feliz} alt="emoji feliz" className="bom" onClick={this.add_suggestion_customer_service} />
                   <img src={sorridente} alt="emoji sorridente" className="excelente" onClick={this.add_suggestion_customer_service} />
                 </div>
-                <h4>Rapidez na Entrega</h4>
+                <h4>RAPIDEZ NA ENTREGA</h4>
                 <div className="emojis-box">
                   <img src={triste} alt="emoji triste" className="pessimo" onClick={this.add_suggestion_delivery_speed} />
                   <img src={insatisfeito} alt="emoji confuso" className="insatisfeito" onClick={this.add_suggestion_delivery_speed} />
@@ -279,7 +291,7 @@ export default class App extends Component {
                   <img src={feliz} alt="emoji feliz" className="bom" onClick={this.add_suggestion_delivery_speed} />
                   <img src={sorridente} alt="emoji sorridente" className="excelente" onClick={this.add_suggestion_delivery_speed} />
                 </div>
-                <h4>Ambiente Agradável</h4>
+                <h4>AMBIENTE AGRADÁVEL</h4>
                 <div className="emojis-box">
                   <img src={triste} alt="emoji triste" className="pessimo" onClick={this.add_suggestion_pleasant_motivation} />
                   <img src={insatisfeito} alt="emoji confuso" className="insatisfeito" onClick={this.add_suggestion_pleasant_motivation} />
@@ -287,12 +299,12 @@ export default class App extends Component {
                   <img src={feliz} alt="emoji feliz" className="bom" onClick={this.add_suggestion_pleasant_motivation} />
                   <img src={sorridente} alt="emoji sorridente" className="excelente" onClick={this.add_suggestion_pleasant_motivation} />
                 </div>
-                <h4>Outros? Quais?</h4>
-                <textarea style={{ fontFamily: 'Segoe UI', fontSize: '18px' }} cols="80" rows="4" value={this.state.motivo} onChange={this.onChangeMotivo} />
+                <h4>OUTROS? QUAIS?</h4>
+                <textarea cols="80" rows="4" value={this.state.motivo} onChange={this.onChangeMotivo} />
               </li> <br />
               <li>
-                <h3>O quão satisfeito você ficou com nosso serviço?</h3>
-                <h4>Consultores de Vendas</h4>
+                <h3>O QUÃO SATISFEITO VOCÊ FICOU COM O NOSSO SERVIÇO?</h3>
+                <h4>CONSULTORES DE VENDAS</h4>
                 <div className="emojis-box">
                   <img src={triste} alt="emoji triste" className="pessimo" onClick={this.add_suggestion_sales_consultants} />
                   <img src={insatisfeito} alt="emoji confuso" className="insatisfeito" onClick={this.add_suggestion_sales_consultants} />
@@ -300,7 +312,7 @@ export default class App extends Component {
                   <img src={feliz} alt="emoji feliz" className="bom" onClick={this.add_suggestion_sales_consultants} />
                   <img src={sorridente} alt="emoji sorridente" className="excelente" onClick={this.add_suggestion_sales_consultants} />
                 </div>
-                <h4>Equipe Balcão</h4>
+                <h4>EQUIPE BALCÃO</h4>
                 <div className="emojis-box">
                   <img src={triste} alt="emoji triste" className="pessimo" onClick={this.add_suggestion_service_team} />
                   <img src={insatisfeito} alt="emoji confuso" className="insatisfeito" onClick={this.add_suggestion_service_team} />
@@ -308,7 +320,7 @@ export default class App extends Component {
                   <img src={feliz} alt="emoji feliz" className="bom" onClick={this.add_suggestion_service_team} />
                   <img src={sorridente} alt="emoji sorridente" className="excelente" onClick={this.add_suggestion_service_team} />
                 </div>
-                <h4>Equipe Caixa</h4>
+                <h4>EQUIPE DE CAIXA</h4>
                 <div className="emojis-box">
                   <img src={triste} alt="emoji triste" className="pessimo" onClick={this.add_suggestion_cash_team} />
                   <img src={insatisfeito} alt="emoji confuso" className="insatisfeito" onClick={this.add_suggestion_cash_team} />
@@ -316,7 +328,7 @@ export default class App extends Component {
                   <img src={feliz} alt="emoji feliz" className="bom" onClick={this.add_suggestion_cash_team} />
                   <img src={sorridente} alt="emoji sorridente" className="excelente" onClick={this.add_suggestion_cash_team} />
                 </div>
-                <h4>Equipe de Entrega</h4>
+                <h4>EQUIPE DE ENTREGA</h4>
                 <div className="emojis-box">
                   <img src={triste} alt="emoji triste" className="pessimo" onClick={this.add_suggestion_delivery_team} />
                   <img src={insatisfeito} alt="emoji confuso" className="insatisfeito" onClick={this.add_suggestion_delivery_team} />
@@ -326,7 +338,7 @@ export default class App extends Component {
                 </div>
               </li> <br />
               <li>
-                <h3>O quanto conseguimos atender todas as suas expectativas?</h3>
+                <h3>O QUANTO CONSEGUIMOS ATENDER TODAS AS SUA EXPECTATIVAS?</h3>
                 <div className="emojis-box">
                   <img src={triste} alt="emoji triste" className="pessimo" onClick={this.add_suggestion_customer_expectations} />
                   <img src={insatisfeito} alt="emoji confuso" className="insatisfeito" onClick={this.add_suggestion_customer_expectations} />
@@ -336,7 +348,7 @@ export default class App extends Component {
                 </div>
               </li> <br />
               <li>
-                <h3>Qual a probabilidade de você fazer novas compras na Info Store?</h3>
+                <h3>QUAL A PROBABILIDADE DE VOCÊ FAZER NOVAS COMPRAS NA INFO STORE?</h3>
                 <div className="emojis-box">
                   <img src={triste} alt="emoji triste" className="pessimo" onClick={this.add_suggestion_new_purchases} />
                   <img src={insatisfeito} alt="emoji confuso" className="insatisfeito" onClick={this.add_suggestion_new_purchases} />
@@ -346,7 +358,7 @@ export default class App extends Component {
                 </div>
               </li> <br />
               <li>
-                <h3>O quanto você recomendaria a empresa Info Store para seus amigos e/ou parentes?</h3>
+                <h3>O QUANTO VOCÊ RECOMENDARIA A EMPRESA INFO STORE PARA SEU AMIFOS E/OU PARENTES?</h3>
                 <div className="emojis-box">
                   <img src={triste} alt="emoji triste" className="pessimo" onClick={this.add_suggestion_recommendation} />
                   <img src={insatisfeito} alt="emoji confuso" className="insatisfeito" onClick={this.add_suggestion_recommendation} />
@@ -356,14 +368,14 @@ export default class App extends Component {
                 </div>
               </li> <br />
               <li>
-                <h3>Você gostaria de acrescentar algo mais para futuras melhorias?</h3>
-                <h4>Sugestão:</h4>
-                <textarea style={{ fontFamily: 'Segoe UI', fontSize: '18px' }} cols="80" rows="4" value={this.state.complementary_suggestion} onChange={this.onChangeSuggestion} /> <br />
-                <input type="submit" value="enviar" className="btn btn-primary" />
+                <h3>VOCÊ GOSTARIA DE ACRESCENTAR ALGO MAIS PARA FUTURAS MELHORIAS?</h3>
+                <textarea cols="80" rows="4" value={this.state.complementary_suggestion} onChange={this.onChangeSuggestion} /> <br />
+                  <input type="submit" value="enviar" className="btn btn-primary" />
               </li>
             </ol>
           </form>
         </div>
+        <img src={footer} alt="footer" style={{ margin: '32px 0px 0px 0px', width: '100%', height: '8px' }} />
       </div>
     );
   }
