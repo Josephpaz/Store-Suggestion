@@ -10,6 +10,11 @@ import termometro from './assets/img/termometro-01.png';
 import footer from './assets/img/footer_prancheta.png';
 import axios from 'axios';
 
+var search = window.location.search;
+var params = new URLSearchParams(search);
+var freight_id = params.get('freight_id');
+console.log(freight_id);
+//funcao para pegar um parametro via url
 export default class App extends Component {
 
   constructor(props) {
@@ -220,6 +225,12 @@ export default class App extends Component {
 
   onSubmit(e) {
     e.preventDefault();
+    this.setState(prevState => {
+      let resposta = Object.assign({ ...prevState.resposta }, prevState.resposta);
+      resposta.freight_id = freight_id;
+      return { resposta }
+    });
+    console.log('id: '+ freight_id+'obj_id: '+ JSON.stringify(this.state.resposta.freight_id));
     if (this.state.motivo === '') {
       this.setState(prevState => {
         let resposta = Object.assign({ ...prevState.resposta }, prevState.resposta);
@@ -358,7 +369,7 @@ export default class App extends Component {
                 </div>
               </li> <br />
               <li>
-                <h3>O QUANTO VOCÊ RECOMENDARIA A EMPRESA INFO STORE PARA SEU AMIFOS E/OU PARENTES?</h3>
+                <h3>O QUANTO VOCÊ RECOMENDARIA A EMPRESA INFO STORE PARA SEU AMIGOS E/OU PARENTES?</h3>
                 <div className="emojis-box">
                   <img src={triste} alt="emoji triste" className="pessimo" onClick={this.add_suggestion_recommendation} />
                   <img src={insatisfeito} alt="emoji confuso" className="insatisfeito" onClick={this.add_suggestion_recommendation} />
@@ -370,7 +381,7 @@ export default class App extends Component {
               <li>
                 <h3>VOCÊ GOSTARIA DE ACRESCENTAR ALGO MAIS PARA FUTURAS MELHORIAS?</h3>
                 <textarea cols="80" rows="4" value={this.state.complementary_suggestion} onChange={this.onChangeSuggestion} /> <br />
-                  <input type="submit" value="enviar" className="btn btn-primary" />
+                <input type="submit" value="enviar" className="btn btn-primary" />
               </li>
             </ol>
           </form>
