@@ -304,7 +304,7 @@ export default class App extends Component {
                 </div>
                 <h4>Outros? Quais?</h4>
                 <textarea cols="80" rows="4" value={this.state.motivo} onChange={this.onChangeMotivo} />
-              </li> <br />
+              </li>
               <li>
                 <h4>O quão satisfeito você ficou com nosso serviço?</h4>
                 <div className="emojis-box">

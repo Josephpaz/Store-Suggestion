@@ -80,10 +80,10 @@ li {
         text-align: center;
     }
 
-    h1{font-size: 22px;}
-    h2{font-size: 20px;}
-    h3{font-size: 18px; margin-top: 2px; padding: 4px;}
-    h4{font-size: 16px; margin-top: 15px; }
+    h1{font-size: 24px;}
+    h2{font-size: 22px;}
+    h3{font-size: 20px; margin-top: 2px; padding: 4px;}
+    h4{font-size: 18px; margin-top: 15px; padding: 1px;}
 
     textarea{
         width: 90%;
