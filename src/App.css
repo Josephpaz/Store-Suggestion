@@ -6,35 +6,11 @@ body{
     padding: 0px;
 }
 
-@font-face{
-    font-family: 'Gotham-Book';
-    src: local('Gotham-Book'), url(./assets/fonts/gothan/gothan/Gotham-Book.otf) format('opentype');
-}
-
-@font-face{
-    font-family: 'Gotham-Medium';
-    src: local('Gotham-Medium'), url(./assets/fonts/gothan/gothan/Gotham-Medium.otf) format('opentype');
-}
-
-@font-face{
-    font-family: 'Gotham-Light';
-    src: local('Gotham-Light'), url(./assets/fonts/gothan/gothan/Gotham-Light.otf) format('opentype');
-}
-
-h3,h4{ 
-    font-family: 'Gotham-Medium';
-    src: url('./assets/fonts/gothan/gothan/Gotham-Medium.otf');
-}
-
 h1{
-    font-family: 'Gotham-Book';
-    src: url('./assets/fonts/gothan/gothan/Gotham-Book.otf');
     font-size: 30px;
 }
 
 h2{
-    font-family: 'Gotham-Light';
-    src: url('./assets/fonts/gothan/gothan/Gotham-Light.otf');
     font-size: 28px;
 }
 
@@ -63,9 +39,7 @@ textarea{
     border-radius: 5px;
     resize: none;
     width: 50%;
-    font-style: 'Gotham-Ligth';
-    src: url('./assets/fonts/gothan/gothan/Gotham-Light.otf');
-    
+
 }
 
 .termometro{
@@ -89,7 +63,7 @@ li {
 
 .header-content{
     background-color: #243573;
-    padding: 12px;
+    padding: 8px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -106,16 +80,15 @@ li {
         text-align: center;
     }
 
-    h1{font-size: 24px;}
-    h2{font-size: 22px;}
-    h3{font-size: 20px;}
-    h4{font-size: 20px; margin-top: 15px; margin-bottom: 5px;}
+    h1{font-size: 22px;}
+    h2{font-size: 20px;}
+    h3{font-size: 18px; margin-top: 2px; padding: 4px;}
+    h4{font-size: 16px; margin-top: 15px; }
 
     textarea{
         width: 90%;
         text-align: center;
-        background-color: rgb(214, 214, 214);
-        border-radius: 15px;
+        border-radius: 8px;
     }
 
    li{
@@ -123,43 +96,21 @@ li {
    }
 
   .emojis-box > img{
-       width: 60px;
+       width: 42px;
        padding: 0px;
-       margin-right: 4px;
-       opacity: 60%;
+       margin-right: 10px;
    }
    
    ol{
        padding: 0px;
    }
 
-   h3{
-       color: white;
-       background-color: rgba(4, 2, 173, 0.589);
-       font-size: 19px;
-       padding: 12px;
-    }
-
-   h4{
-       font-size: 16px;
-       margin-top: 20px;
-       color: #243573;
-       padding: 8px;
-       border-radius: 20px;
-       background-color: rgba(172, 172, 172, 0.315);
-       margin: 18px 70px 5px 70px;
-    }
-
-   .termometro{
-       width: 60%;
-   }
    .logo_info_store{
        height: 100%;
    }
 
    .btn-primary{
        margin-top: 5px;
-       width: 30%;
-       border-radius: 20px;
+       width: 90%;
    }
 }
