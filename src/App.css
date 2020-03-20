@@ -135,7 +135,7 @@ li {
 
    h3{
        color: white;
-       background-color: rgba(11, 7, 224, 0.568);
+       background-color: rgba(4, 2, 173, 0.589);
        font-size: 19px;
        padding: 12px;
     }
@@ -146,8 +146,8 @@ li {
        color: #243573;
        padding: 8px;
        border-radius: 20px;
-       background-color: rgb(214, 214, 214);
-       margin: 18px 70px 15px 70px;
+       background-color: rgba(172, 172, 172, 0.315);
+       margin: 18px 70px 5px 70px;
     }
 
    .termometro{
