@@ -51,17 +51,14 @@ h4{
     font-size: 20px;
     margin-top: 20px;
 }
-.emojis-box{
-    margin-top: 12px;
-    margin-bottom: 12px;
-}
+
 img{
     width: 52px;
-    padding: 5px;
-    margin: 12px;
+    padding: 2px;
 }
 
 textarea{
+
     padding: 5px 8px;
     border-radius: 5px;
     resize: none;
@@ -119,19 +116,17 @@ li {
         text-align: center;
         background-color: rgb(214, 214, 214);
         border-radius: 15px;
-
     }
 
    li{
        list-style-type: none;
    }
 
-   img{
-       margin-top: 5px;
-       width: 46px;
-       margin-bottom: 5px;
+  .emojis-box > img{
+       width: 60px;
        padding: 0px;
        margin-right: 4px;
+       opacity: 60%;
    }
    
    ol{
@@ -140,19 +135,19 @@ li {
 
    h3{
        color: white;
-       background-color: rgba(65, 105, 225, 0.891);
+       background-color: rgba(11, 7, 224, 0.568);
        font-size: 19px;
        padding: 12px;
     }
 
    h4{
-       font-size: 20px;
+       font-size: 16px;
        margin-top: 20px;
        color: #243573;
        padding: 8px;
        border-radius: 20px;
        background-color: rgb(214, 214, 214);
-       margin: 18px 50px 15px 50px;
+       margin: 18px 70px 15px 70px;
     }
 
    .termometro{
