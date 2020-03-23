@@ -56,7 +56,9 @@ img{
     width: 52px;
     padding: 2px;
 }
-
+.emojis-box > img {
+    opacity: 0.6;
+}
 textarea{
 
     padding: 5px 8px;
@@ -126,7 +128,7 @@ li {
        width: 60px;
        padding: 0px;
        margin-right: 4px;
-       opacity: 60%;
+       opacity: 0.6;
    }
    
    ol{
@@ -135,7 +137,7 @@ li {
 
    h3{
        color: white;
-       background-color: rgba(4, 2, 173, 0.589);
+       background-color: rgba(52, 49, 255, 0.623);
        font-size: 19px;
        padding: 12px;
     }
