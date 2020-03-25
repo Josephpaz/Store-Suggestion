@@ -129,7 +129,7 @@ export default class App extends Component {
         }
       });
 
-      
+
       var id_img5 = '';
       $('.box-5 > img').click(function (e) {
         if ($(`#${e.target.id}`).css('opacity') === '0.6') {
@@ -145,7 +145,7 @@ export default class App extends Component {
           $(`#${e.target.id}`).css('opacity', 0.6);
         }
       });
-      
+
       var id_img6 = '';
       $('.box-6 > img').click(function (e) {
         if ($(`#${e.target.id}`).css('opacity') === '0.6') {
@@ -161,7 +161,7 @@ export default class App extends Component {
           $(`#${e.target.id}`).css('opacity', 0.6);
         }
       });
-      
+
       var id_img7 = '';
       $('.box-7 > img').click(function (e) {
         if ($(`#${e.target.id}`).css('opacity') === '0.6') {
@@ -177,7 +177,7 @@ export default class App extends Component {
           $(`#${e.target.id}`).css('opacity', 0.6);
         }
       });
-      
+
       var id_img8 = '';
       $('.box-8 > img').click(function (e) {
         if ($(`#${e.target.id}`).css('opacity') === '0.6') {
@@ -193,7 +193,7 @@ export default class App extends Component {
           $(`#${e.target.id}`).css('opacity', 0.6);
         }
       });
-      
+
       var id_img9 = '';
       $('.box-9 > img').click(function (e) {
         if ($(`#${e.target.id}`).css('opacity') === '0.6') {
@@ -209,7 +209,7 @@ export default class App extends Component {
           $(`#${e.target.id}`).css('opacity', 0.6);
         }
       });
-      
+
       var id_img10 = '';
       $('.box-10 > img').click(function (e) {
         if ($(`#${e.target.id}`).css('opacity') === '0.6') {
@@ -225,7 +225,7 @@ export default class App extends Component {
           $(`#${e.target.id}`).css('opacity', 0.6);
         }
       });
-      
+
       var id_img11 = '';
       $('.box-11 > img').click(function (e) {
         if ($(`#${e.target.id}`).css('opacity') === '0.6') {
@@ -241,7 +241,7 @@ export default class App extends Component {
           $(`#${e.target.id}`).css('opacity', 0.6);
         }
       });
-      
+
       var id_img12 = '';
       $('.box-12 > img').click(function (e) {
         if ($(`#${e.target.id}`).css('opacity') === '0.6') {
@@ -271,7 +271,6 @@ export default class App extends Component {
       return { resposta }
     });
 
-    console.log("resposta do cliente em relação ao(s) purchase_motivation(s): " + JSON.stringify(this.state.resposta.purchase_motivation));
   }
 
   onChangeSuggestion(e) {
@@ -284,8 +283,6 @@ export default class App extends Component {
       resposta.complementary_suggestion = this.state.sugestao;
       return { resposta }
     });
-
-    console.log("resposta do cliente em relação a(s) complementary_suggestion(oes): " + JSON.stringify(this.state.resposta.complementary_suggestion));
   }
 
   add_suggestion_price(e) {
@@ -297,8 +294,6 @@ export default class App extends Component {
       resposta.freight_id = parseInt(freight_id, 10);
       return { resposta }
     });
-
-    console.log("resposta do cliente em relação ao price: " + JSON.stringify(this.state.resposta.price));
   }
 
   add_suggestion_product_mix(e) {
@@ -310,7 +305,6 @@ export default class App extends Component {
       resposta.product_mix = img_className;
       return { resposta }
     });
-    console.log("resposta do cliente em relação ao mix de produtos: " + JSON.stringify(this.state.resposta.product_mix));
   }
 
   add_suggestion_customer_service(e) {
@@ -320,7 +314,6 @@ export default class App extends Component {
       resposta.customer_service = img_className;
       return { resposta }
     });
-    console.log("resposta do cliente em relação ao atendimento: " + JSON.stringify(this.state.resposta.customer_service));
   }
 
   add_suggestion_delivery_speed(e) {
@@ -330,7 +323,6 @@ export default class App extends Component {
       resposta.delivery_speed = img_className;
       return { resposta }
     });
-    console.log("resposta do cliente em relação a rapidez na entrega: " + JSON.stringify(this.state.resposta.delivery_speed));
   }
 
   add_suggestion_pleasant_motivation(e) {
@@ -340,7 +332,6 @@ export default class App extends Component {
       resposta.pleasant_environment = img_className;
       return { resposta }
     });
-    console.log("resposta do cliente em relação ao ambiente: " + JSON.stringify(this.state.resposta.pleasant_environment));
   }
 
   add_suggestion_sales_consultants(e) {
@@ -350,7 +341,6 @@ export default class App extends Component {
       resposta.sales_consultants = img_className;
       return { resposta }
     });
-    console.log("resposta do cliente em relação ao consultor de vendas" + JSON.stringify(this.state.resposta.sales_consultants));
   }
 
   add_suggestion_service_team(e) {
@@ -360,7 +350,6 @@ export default class App extends Component {
       resposta.service_team = img_className;
       return { resposta }
     });
-    console.log("resposta do cliente em relação a equipe do balcao: " + JSON.stringify(this.state.resposta.service_team));
   }
 
   add_suggestion_cash_team(e) {
@@ -370,7 +359,6 @@ export default class App extends Component {
       resposta.cash_team = img_className;
       return { resposta }
     });
-    console.log("resposta do cliente em relação a equipe do caixa: " + JSON.stringify(this.state.resposta.cash_team));
   }
 
   add_suggestion_delivery_team(e) {
@@ -380,7 +368,6 @@ export default class App extends Component {
       resposta.delivery_team = img_className;
       return { resposta }
     });
-    console.log("resposta do cliente em relação a equipe de entrega: " + JSON.stringify(this.state.resposta.delivery_team));
   }
 
   add_suggestion_customer_expectations(e) {
@@ -390,7 +377,6 @@ export default class App extends Component {
       resposta.customer_expectations = img_className;
       return { resposta }
     });
-    console.log("resposta do cliente em relação à expectativas: " + JSON.stringify(this.state.resposta.customer_expectations));
   }
 
   add_suggestion_new_purchases(e) {
@@ -400,7 +386,6 @@ export default class App extends Component {
       resposta.new_purchases = img_className;
       return { resposta }
     });
-    console.log("resposta do cliente em relação a nova possibilidade de compra: " + this.state.resposta.new_purchases);
   }
 
   add_suggestion_recommendation(e) {
@@ -410,7 +395,6 @@ export default class App extends Component {
       resposta.recommendation = img_className;
       return { resposta }
     });
-    console.log("resposta do cliente em relação da recomendação: " + JSON.stringify(this.state.resposta.recommendation));
   }
   parserToNumber(e) {
 
@@ -424,7 +408,6 @@ export default class App extends Component {
 
   onSubmit(e) {
     e.preventDefault();
-    console.log('id: ' + freight_id + 'obj_id: ' + JSON.stringify(this.state.resposta.freight_id));
     if (this.state.motivo === '') {
       this.setState(prevState => {
         let resposta = Object.assign({ ...prevState.resposta }, prevState.resposta);
@@ -439,9 +422,12 @@ export default class App extends Component {
         return { resposta }
       });
     }
-    axios.post('http://logistica.navegam.com.br:3000/api/v4/frete/feedback', this.state.resposta).then(res => console.log(res.data));
+    axios.post('http://logistica.navegam.com.br:3000/api/v4/frete/feedback', this.state.resposta).
+    then(res => {
+      console.log(res.data);
+      alert('Formulário enviado com sucesso!');
+    });
     // window.location.reload();
-    console.log("Obj: " + JSON.stringify(this.state.resposta));
   }
   render() {
     return (
