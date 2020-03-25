@@ -8,11 +8,11 @@ import sorridente from './assets/icons/icons8-sorridente-50.png';
 import info_store_logo from './assets/img/info_store_logo.png';
 import footer from './assets/img/footer_prancheta.png';
 import axios from 'axios';
+import $ from 'jquery';
 
 var search = window.location.search;
 var params = new URLSearchParams(search);
 var freight_id = params.get('freight_id');
-console.log(freight_id);
 //funcao para pegar um parametro via url
 export default class App extends Component {
 
@@ -61,7 +61,203 @@ export default class App extends Component {
     this.onSubmit = this.onSubmit.bind(this);
   }
 
+  componentDidMount() {
+    $(document).ready(function () {
 
+      var id_img1 = '';
+      $('.box-1 > img').click(function (e) {
+        if ($(`#${e.target.id}`).css('opacity') === '0.6') {
+          if (id_img1 === '') {
+            $(`#${e.target.id}`).css('opacity', 1);
+            id_img1 = e.target.id;
+          } else if (id_img1 !== e.target.id) {
+            $(`#${id_img1}`).css('opacity', 0.6);
+            $(`#${e.target.id}`).css('opacity', 1);
+            id_img1 = e.target.id;
+          }
+        } else {
+          $(`#${e.target.id}`).css('opacity', 0.6);
+        }
+      });
+
+      var id_img2 = '';
+      $('.box-2 > img').click(function (e) {
+        if ($(`#${e.target.id}`).css('opacity') === '0.6') {
+          if (id_img2 === '') {
+            $(`#${e.target.id}`).css('opacity', 1);
+            id_img2 = e.target.id;
+          } else if (id_img2 !== e.target.id) {
+            $(`#${id_img2}`).css('opacity', 0.6);
+            $(`#${e.target.id}`).css('opacity', 1);
+            id_img2 = e.target.id;
+          }
+        } else {
+          $(`#${e.target.id}`).css('opacity', 0.6);
+        }
+      });
+
+      var id_img3 = '';
+      $('.box-3 > img').click(function (e) {
+        if ($(`#${e.target.id}`).css('opacity') === '0.6') {
+          if (id_img3 === '') {
+            $(`#${e.target.id}`).css('opacity', 1);
+            id_img3 = e.target.id;
+          } else if (id_img3 !== e.target.id) {
+            $(`#${id_img3}`).css('opacity', 0.6);
+            $(`#${e.target.id}`).css('opacity', 1);
+            id_img3 = e.target.id;
+          }
+        } else {
+          $(`#${e.target.id}`).css('opacity', 0.6);
+        }
+      });
+
+      var id_img4 = '';
+      $('.box-4 > img').click(function (e) {
+        if ($(`#${e.target.id}`).css('opacity') === '0.6') {
+          if (id_img4 === '') {
+            $(`#${e.target.id}`).css('opacity', 1);
+            id_img4 = e.target.id;
+          } else if (id_img4 !== e.target.id) {
+            $(`#${id_img4}`).css('opacity', 0.6);
+            $(`#${e.target.id}`).css('opacity', 1);
+            id_img4 = e.target.id;
+          }
+        } else {
+          $(`#${e.target.id}`).css('opacity', 0.6);
+        }
+      });
+
+
+      var id_img5 = '';
+      $('.box-5 > img').click(function (e) {
+        if ($(`#${e.target.id}`).css('opacity') === '0.6') {
+          if (id_img5 === '') {
+            $(`#${e.target.id}`).css('opacity', 1);
+            id_img5 = e.target.id;
+          } else if (id_img5 !== e.target.id) {
+            $(`#${id_img5}`).css('opacity', 0.6);
+            $(`#${e.target.id}`).css('opacity', 1);
+            id_img5 = e.target.id;
+          }
+        } else {
+          $(`#${e.target.id}`).css('opacity', 0.6);
+        }
+      });
+
+      var id_img6 = '';
+      $('.box-6 > img').click(function (e) {
+        if ($(`#${e.target.id}`).css('opacity') === '0.6') {
+          if (id_img6 === '') {
+            $(`#${e.target.id}`).css('opacity', 1);
+            id_img6 = e.target.id;
+          } else if (id_img6 !== e.target.id) {
+            $(`#${id_img6}`).css('opacity', 0.6);
+            $(`#${e.target.id}`).css('opacity', 1);
+            id_img6 = e.target.id;
+          }
+        } else {
+          $(`#${e.target.id}`).css('opacity', 0.6);
+        }
+      });
+
+      var id_img7 = '';
+      $('.box-7 > img').click(function (e) {
+        if ($(`#${e.target.id}`).css('opacity') === '0.6') {
+          if (id_img7 === '') {
+            $(`#${e.target.id}`).css('opacity', 1);
+            id_img7 = e.target.id;
+          } else if (id_img7 !== e.target.id) {
+            $(`#${id_img7}`).css('opacity', 0.6);
+            $(`#${e.target.id}`).css('opacity', 1);
+            id_img7 = e.target.id;
+          }
+        } else {
+          $(`#${e.target.id}`).css('opacity', 0.6);
+        }
+      });
+
+      var id_img8 = '';
+      $('.box-8 > img').click(function (e) {
+        if ($(`#${e.target.id}`).css('opacity') === '0.6') {
+          if (id_img8 === '') {
+            $(`#${e.target.id}`).css('opacity', 1);
+            id_img8 = e.target.id;
+          } else if (id_img8 !== e.target.id) {
+            $(`#${id_img8}`).css('opacity', 0.6);
+            $(`#${e.target.id}`).css('opacity', 1);
+            id_img8 = e.target.id;
+          }
+        } else {
+          $(`#${e.target.id}`).css('opacity', 0.6);
+        }
+      });
+
+      var id_img9 = '';
+      $('.box-9 > img').click(function (e) {
+        if ($(`#${e.target.id}`).css('opacity') === '0.6') {
+          if (id_img9 === '') {
+            $(`#${e.target.id}`).css('opacity', 1);
+            id_img9 = e.target.id;
+          } else if (id_img9 !== e.target.id) {
+            $(`#${id_img9}`).css('opacity', 0.6);
+            $(`#${e.target.id}`).css('opacity', 1);
+            id_img9 = e.target.id;
+          }
+        } else {
+          $(`#${e.target.id}`).css('opacity', 0.6);
+        }
+      });
+
+      var id_img10 = '';
+      $('.box-10 > img').click(function (e) {
+        if ($(`#${e.target.id}`).css('opacity') === '0.6') {
+          if (id_img10 === '') {
+            $(`#${e.target.id}`).css('opacity', 1);
+            id_img10 = e.target.id;
+          } else if (id_img10 !== e.target.id) {
+            $(`#${id_img10}`).css('opacity', 0.6);
+            $(`#${e.target.id}`).css('opacity', 1);
+            id_img10 = e.target.id;
+          }
+        } else {
+          $(`#${e.target.id}`).css('opacity', 0.6);
+        }
+      });
+
+      var id_img11 = '';
+      $('.box-11 > img').click(function (e) {
+        if ($(`#${e.target.id}`).css('opacity') === '0.6') {
+          if (id_img11 === '') {
+            $(`#${e.target.id}`).css('opacity', 1);
+            id_img11 = e.target.id;
+          } else if (id_img11 !== e.target.id) {
+            $(`#${id_img11}`).css('opacity', 0.6);
+            $(`#${e.target.id}`).css('opacity', 1);
+            id_img11 = e.target.id;
+          }
+        } else {
+          $(`#${e.target.id}`).css('opacity', 0.6);
+        }
+      });
+
+      var id_img12 = '';
+      $('.box-12 > img').click(function (e) {
+        if ($(`#${e.target.id}`).css('opacity') === '0.6') {
+          if (id_img12 === '') {
+            $(`#${e.target.id}`).css('opacity', 1);
+            id_img12 = e.target.id;
+          } else if (id_img12 !== e.target.id) {
+            $(`#${id_img12}`).css('opacity', 0.6);
+            $(`#${e.target.id}`).css('opacity', 1);
+            id_img12 = e.target.id;
+          }
+        } else {
+          $(`#${e.target.id}`).css('opacity', 0.6);
+        }
+      });
+    });
+  }
 
   onChangeMotivo(e) {
     this.setState({
@@ -73,8 +269,6 @@ export default class App extends Component {
       resposta.purchase_motivation = this.state.motivo;
       return { resposta }
     });
-
-    console.log("resposta do cliente em relação ao(s) purchase_motivation(s): " + JSON.stringify(this.state.resposta.purchase_motivation));
   }
 
   onChangeSuggestion(e) {
@@ -87,8 +281,6 @@ export default class App extends Component {
       resposta.complementary_suggestion = this.state.sugestao;
       return { resposta }
     });
-
-    console.log("resposta do cliente em relação a(s) complementary_suggestion(oes): " + JSON.stringify(this.state.resposta.complementary_suggestion));
   }
 
   add_suggestion_price(e) {
@@ -100,8 +292,6 @@ export default class App extends Component {
       resposta.freight_id = parseInt(freight_id, 10);
       return { resposta }
     });
-
-    console.log("resposta do cliente em relação ao price: " + JSON.stringify(this.state.resposta.price));
   }
 
   add_suggestion_product_mix(e) {
@@ -113,7 +303,6 @@ export default class App extends Component {
       resposta.product_mix = img_className;
       return { resposta }
     });
-    console.log("resposta do cliente em relação ao mix de produtos: " + JSON.stringify(this.state.resposta.product_mix));
   }
 
   add_suggestion_customer_service(e) {
@@ -123,7 +312,6 @@ export default class App extends Component {
       resposta.customer_service = img_className;
       return { resposta }
     });
-    console.log("resposta do cliente em relação ao atendimento: " + JSON.stringify(this.state.resposta.customer_service));
   }
 
   add_suggestion_delivery_speed(e) {
@@ -133,7 +321,6 @@ export default class App extends Component {
       resposta.delivery_speed = img_className;
       return { resposta }
     });
-    console.log("resposta do cliente em relação a rapidez na entrega: " + JSON.stringify(this.state.resposta.delivery_speed));
   }
 
   add_suggestion_pleasant_motivation(e) {
@@ -143,7 +330,6 @@ export default class App extends Component {
       resposta.pleasant_environment = img_className;
       return { resposta }
     });
-    console.log("resposta do cliente em relação ao ambiente: " + JSON.stringify(this.state.resposta.pleasant_environment));
   }
 
   add_suggestion_sales_consultants(e) {
@@ -153,7 +339,6 @@ export default class App extends Component {
       resposta.sales_consultants = img_className;
       return { resposta }
     });
-    console.log("resposta do cliente em relação ao consultor de vendas" + JSON.stringify(this.state.resposta.sales_consultants));
   }
 
   add_suggestion_service_team(e) {
@@ -163,7 +348,6 @@ export default class App extends Component {
       resposta.service_team = img_className;
       return { resposta }
     });
-    console.log("resposta do cliente em relação a equipe do balcao: " + JSON.stringify(this.state.resposta.service_team));
   }
 
   add_suggestion_cash_team(e) {
@@ -173,7 +357,6 @@ export default class App extends Component {
       resposta.cash_team = img_className;
       return { resposta }
     });
-    console.log("resposta do cliente em relação a equipe do caixa: " + JSON.stringify(this.state.resposta.cash_team));
   }
 
   add_suggestion_delivery_team(e) {
@@ -183,7 +366,6 @@ export default class App extends Component {
       resposta.delivery_team = img_className;
       return { resposta }
     });
-    console.log("resposta do cliente em relação a equipe de entrega: " + JSON.stringify(this.state.resposta.delivery_team));
   }
 
   add_suggestion_customer_expectations(e) {
@@ -193,7 +375,6 @@ export default class App extends Component {
       resposta.customer_expectations = img_className;
       return { resposta }
     });
-    console.log("resposta do cliente em relação à expectativas: " + JSON.stringify(this.state.resposta.customer_expectations));
   }
 
   add_suggestion_new_purchases(e) {
@@ -203,7 +384,6 @@ export default class App extends Component {
       resposta.new_purchases = img_className;
       return { resposta }
     });
-    console.log("resposta do cliente em relação a nova possibilidade de compra: " + this.state.resposta.new_purchases);
   }
 
   add_suggestion_recommendation(e) {
@@ -213,7 +393,6 @@ export default class App extends Component {
       resposta.recommendation = img_className;
       return { resposta }
     });
-    console.log("resposta do cliente em relação da recomendação: " + JSON.stringify(this.state.resposta.recommendation));
   }
   parserToNumber(e) {
 
@@ -227,7 +406,6 @@ export default class App extends Component {
 
   onSubmit(e) {
     e.preventDefault();
-    console.log('id: ' + freight_id + 'obj_id: ' + JSON.stringify(this.state.resposta.freight_id));
     if (this.state.motivo === '') {
       this.setState(prevState => {
         let resposta = Object.assign({ ...prevState.resposta }, prevState.resposta);
@@ -242,9 +420,11 @@ export default class App extends Component {
         return { resposta }
       });
     }
-    axios.post('http://logistica.navegam.com.br:3000/api/v4/frete/feedback', this.state.resposta).then(res => console.log(res.data));
-    // window.location.reload();
-    console.log("Obj: " + JSON.stringify(this.state.resposta));
+    axios.post('http://logistica.navegam.com.br:3000/api/v4/frete/feedback', this.state.resposta)
+      .then(res => {
+        alert('Formulário Enviado com sucesso!');
+        console.log(res.data);
+      });
   }
   render() {
     return (
@@ -256,117 +436,117 @@ export default class App extends Component {
           </div>
           <img className="logo_info_store" src={info_store_logo} alt="logo_info_store" />
         </div>
-        <img src={footer} alt="footer" style={{display: 'block', width: '100%', backgroundColor: ' #243573'}} />
+        <img src={footer} alt="footer" style={{ display: 'block', width: '100%', backgroundColor: ' #243573' }} />
         <div className="content">
           <form onSubmit={this.onSubmit}>
             <ol>
               <li>
                 <h3 style={{ marginTop: '14px' }}>O que motiva você a comprar com a Info Store?</h3>
                 <h4>Preço</h4>
-                <div className="emojis-box">
-                  <img src={triste} alt="emoji triste" className="pessimo" onClick={this.add_suggestion_price} />
-                  <img src={insatisfeito} alt="emoji confuso" className="insatisfeito" onClick={this.add_suggestion_price} />
-                  <img src={neutro} alt="emoji neutro" className="neutro" onClick={this.add_suggestion_price} />
-                  <img src={feliz} alt="emoji feliz" className="bom" onClick={this.add_suggestion_price} />
-                  <img src={sorridente} alt="emoji sorridente" className="excelente" onClick={this.add_suggestion_price} />
+                <div className="emojis-box box-1">
+                  <img src={triste} alt="emoji triste" className="pessimo" id="p1" onClick={this.add_suggestion_price} />
+                  <img src={insatisfeito} alt="emoji confuso" className="insatisfeito" id="i1" onClick={this.add_suggestion_price} />
+                  <img src={neutro} alt="emoji neutro" className="neutro" id="n1" onClick={this.add_suggestion_price} />
+                  <img src={feliz} alt="emoji feliz" className="bom" id="f1" onClick={this.add_suggestion_price} />
+                  <img src={sorridente} alt="emoji sorridente" className="excelente" id="s1" onClick={this.add_suggestion_price} />
                 </div>
                 <h4>Mix de Produtos</h4>
-                <div className="emojis-box">
-                  <img src={triste} alt="emoji triste" className="pessimo" onClick={this.add_suggestion_product_mix} />
-                  <img src={insatisfeito} alt="emoji confuso" className="insatisfeito" onClick={this.add_suggestion_product_mix} />
-                  <img src={neutro} alt="emoji neutro" className="neutro" onClick={this.add_suggestion_product_mix} />
-                  <img src={feliz} alt="emoji feliz" className="bom" onClick={this.add_suggestion_product_mix} />
-                  <img src={sorridente} alt="emoji sorridente" className="excelente" onClick={this.add_suggestion_product_mix} />
+                <div className="emojis-box box-2">
+                  <img src={triste} alt="emoji triste" className="pessimo" id="p2" onClick={this.add_suggestion_product_mix} />
+                  <img src={insatisfeito} alt="emoji confuso" className="insatisfeito" id="i2" onClick={this.add_suggestion_product_mix} />
+                  <img src={neutro} alt="emoji neutro" className="neutro" id="n2" onClick={this.add_suggestion_product_mix} />
+                  <img src={feliz} alt="emoji feliz" className="bom" id="f2" onClick={this.add_suggestion_product_mix} />
+                  <img src={sorridente} alt="emoji sorridente" className="excelente" id="s2" onClick={this.add_suggestion_product_mix} />
                 </div>
                 <h4>Atendimento</h4>
-                <div className="emojis-box">
-                  <img src={triste} alt="emoji triste" className="pessimo" onClick={this.add_suggestion_customer_service} />
-                  <img src={insatisfeito} alt="emoji confuso" className="insatisfeito" onClick={this.add_suggestion_customer_service} />
-                  <img src={neutro} alt="emoji neutro" className="neutro" onClick={this.add_suggestion_customer_service} />
-                  <img src={feliz} alt="emoji feliz" className="bom" onClick={this.add_suggestion_customer_service} />
-                  <img src={sorridente} alt="emoji sorridente" className="excelente" onClick={this.add_suggestion_customer_service} />
+                <div className="emojis-box box-3">
+                  <img src={triste} alt="emoji triste" className="pessimo" id="p3" onClick={this.add_suggestion_customer_service} />
+                  <img src={insatisfeito} alt="emoji confuso" className="insatisfeito" id="i3" onClick={this.add_suggestion_customer_service} />
+                  <img src={neutro} alt="emoji neutro" className="neutro" id="n3" onClick={this.add_suggestion_customer_service} />
+                  <img src={feliz} alt="emoji feliz" className="bom" id="f3" onClick={this.add_suggestion_customer_service} />
+                  <img src={sorridente} alt="emoji sorridente" className="excelente" id="s3" onClick={this.add_suggestion_customer_service} />
                 </div>
                 <h4>Rapidez na Entrega</h4>
-                <div className="emojis-box">
-                  <img src={triste} alt="emoji triste" className="pessimo" onClick={this.add_suggestion_delivery_speed} />
-                  <img src={insatisfeito} alt="emoji confuso" className="insatisfeito" onClick={this.add_suggestion_delivery_speed} />
-                  <img src={neutro} alt="emoji neutro" className="neutro" onClick={this.add_suggestion_delivery_speed} />
-                  <img src={feliz} alt="emoji feliz" className="bom" onClick={this.add_suggestion_delivery_speed} />
-                  <img src={sorridente} alt="emoji sorridente" className="excelente" onClick={this.add_suggestion_delivery_speed} />
+                <div className="emojis-box box-4">
+                  <img src={triste} alt="emoji triste" className="pessimo" id="p4" onClick={this.add_suggestion_delivery_speed} />
+                  <img src={insatisfeito} alt="emoji confuso" className="insatisfeito" id="i4" onClick={this.add_suggestion_delivery_speed} />
+                  <img src={neutro} alt="emoji neutro" className="neutro" id="n4" onClick={this.add_suggestion_delivery_speed} />
+                  <img src={feliz} alt="emoji feliz" className="bom" id="f4" onClick={this.add_suggestion_delivery_speed} />
+                  <img src={sorridente} alt="emoji sorridente" className="excelente" id="s4" onClick={this.add_suggestion_delivery_speed} />
                 </div>
                 <h4>Ambiente Agradável</h4>
-                <div className="emojis-box">
-                  <img src={triste} alt="emoji triste" className="pessimo" onClick={this.add_suggestion_pleasant_motivation} />
-                  <img src={insatisfeito} alt="emoji confuso" className="insatisfeito" onClick={this.add_suggestion_pleasant_motivation} />
-                  <img src={neutro} alt="emoji neutro" className="neutro" onClick={this.add_suggestion_pleasant_motivation} />
-                  <img src={feliz} alt="emoji feliz" className="bom" onClick={this.add_suggestion_pleasant_motivation} />
-                  <img src={sorridente} alt="emoji sorridente" className="excelente" onClick={this.add_suggestion_pleasant_motivation} />
+                <div className="emojis-box box-5">
+                  <img src={triste} alt="emoji triste" className="pessimo" id="p5" onClick={this.add_suggestion_pleasant_motivation} />
+                  <img src={insatisfeito} alt="emoji confuso" className="insatisfeito" id="i5" onClick={this.add_suggestion_pleasant_motivation} />
+                  <img src={neutro} alt="emoji neutro" className="neutro" id="n5" onClick={this.add_suggestion_pleasant_motivation} />
+                  <img src={feliz} alt="emoji feliz" className="bom" id="f5" onClick={this.add_suggestion_pleasant_motivation} />
+                  <img src={sorridente} alt="emoji sorridente" className="excelente" id="s5" onClick={this.add_suggestion_pleasant_motivation} />
                 </div>
                 <h4>Outros? Quais?</h4>
                 <textarea cols="80" rows="4" value={this.state.motivo} onChange={this.onChangeMotivo} />
               </li>
               <li>
                 <h4>O quão satisfeito você ficou com nosso serviço?</h4>
-                <div className="emojis-box">
-                  <img src={triste} alt="emoji triste" className="pessimo" onClick={this.add_suggestion_sales_consultants} />
-                  <img src={insatisfeito} alt="emoji confuso" className="insatisfeito" onClick={this.add_suggestion_sales_consultants} />
-                  <img src={neutro} alt="emoji neutro" className="neutro" onClick={this.add_suggestion_sales_consultants} />
-                  <img src={feliz} alt="emoji feliz" className="bom" onClick={this.add_suggestion_sales_consultants} />
-                  <img src={sorridente} alt="emoji sorridente" className="excelente" onClick={this.add_suggestion_sales_consultants} />
+                <div className="emojis-box box-6">
+                  <img src={triste} alt="emoji triste" className="pessimo" id="p6" onClick={this.add_suggestion_sales_consultants} />
+                  <img src={insatisfeito} alt="emoji confuso" className="insatisfeito" id="i6" onClick={this.add_suggestion_sales_consultants} />
+                  <img src={neutro} alt="emoji neutro" className="neutro" id="n6" onClick={this.add_suggestion_sales_consultants} />
+                  <img src={feliz} alt="emoji feliz" className="bom" id="f6" onClick={this.add_suggestion_sales_consultants} />
+                  <img src={sorridente} alt="emoji sorridente" className="excelente" id="s6" onClick={this.add_suggestion_sales_consultants} />
                 </div>
                 <h4>Equipe Balcão</h4>
-                <div className="emojis-box">
-                  <img src={triste} alt="emoji triste" className="pessimo" onClick={this.add_suggestion_service_team} />
-                  <img src={insatisfeito} alt="emoji confuso" className="insatisfeito" onClick={this.add_suggestion_service_team} />
-                  <img src={neutro} alt="emoji neutro" className="neutro" onClick={this.add_suggestion_service_team} />
-                  <img src={feliz} alt="emoji feliz" className="bom" onClick={this.add_suggestion_service_team} />
-                  <img src={sorridente} alt="emoji sorridente" className="excelente" onClick={this.add_suggestion_service_team} />
+                <div className="emojis-box box-7">
+                  <img src={triste} alt="emoji triste" className="pessimo" id="p7" onClick={this.add_suggestion_service_team} />
+                  <img src={insatisfeito} alt="emoji confuso" className="insatisfeito" id="i7" onClick={this.add_suggestion_service_team} />
+                  <img src={neutro} alt="emoji neutro" className="neutro" id="n7" onClick={this.add_suggestion_service_team} />
+                  <img src={feliz} alt="emoji feliz" className="bom" id="f7" onClick={this.add_suggestion_service_team} />
+                  <img src={sorridente} alt="emoji sorridente" className="excelente" id="s7" onClick={this.add_suggestion_service_team} />
                 </div>
                 <h4>Equipe de Caixa</h4>
-                <div className="emojis-box">
-                  <img src={triste} alt="emoji triste" className="pessimo" onClick={this.add_suggestion_cash_team} />
-                  <img src={insatisfeito} alt="emoji confuso" className="insatisfeito" onClick={this.add_suggestion_cash_team} />
-                  <img src={neutro} alt="emoji neutro" className="neutro" onClick={this.add_suggestion_cash_team} />
-                  <img src={feliz} alt="emoji feliz" className="bom" onClick={this.add_suggestion_cash_team} />
-                  <img src={sorridente} alt="emoji sorridente" className="excelente" onClick={this.add_suggestion_cash_team} />
+                <div className="emojis-box box-8">
+                  <img src={triste} alt="emoji triste" className="pessimo" id="p8" onClick={this.add_suggestion_cash_team} />
+                  <img src={insatisfeito} alt="emoji confuso" className="insatisfeito" id="i8" onClick={this.add_suggestion_cash_team} />
+                  <img src={neutro} alt="emoji neutro" className="neutro" id="n8" onClick={this.add_suggestion_cash_team} />
+                  <img src={feliz} alt="emoji feliz" className="bom" id="f8" onClick={this.add_suggestion_cash_team} />
+                  <img src={sorridente} alt="emoji sorridente" className="excelente" id="s8" onClick={this.add_suggestion_cash_team} />
                 </div>
                 <h4>Equipe de Entrega</h4>
-                <div className="emojis-box">
-                  <img src={triste} alt="emoji triste" className="pessimo" onClick={this.add_suggestion_delivery_team} />
-                  <img src={insatisfeito} alt="emoji confuso" className="insatisfeito" onClick={this.add_suggestion_delivery_team} />
-                  <img src={neutro} alt="emoji neutro" className="neutro" onClick={this.add_suggestion_delivery_team} />
-                  <img src={feliz} alt="emoji feliz" className="bom" onClick={this.add_suggestion_delivery_team} />
-                  <img src={sorridente} alt="emoji sorridente" className="excelente" onClick={this.add_suggestion_delivery_team} />
+                <div className="emojis-box box-9">
+                  <img src={triste} alt="emoji triste" className="pessimo" id="p9" onClick={this.add_suggestion_delivery_team} />
+                  <img src={insatisfeito} alt="emoji confuso" className="insatisfeito" id="i9" onClick={this.add_suggestion_delivery_team} />
+                  <img src={neutro} alt="emoji neutro" className="neutro" id="n9" onClick={this.add_suggestion_delivery_team} />
+                  <img src={feliz} alt="emoji feliz" className="bom" id="f9" onClick={this.add_suggestion_delivery_team} />
+                  <img src={sorridente} alt="emoji sorridente" className="excelente" id="s9" onClick={this.add_suggestion_delivery_team} />
                 </div>
               </li> <br />
               <li>
                 <h3>O quanto conseguimos atender todas as suas expectativas?</h3>
-                <div className="emojis-box">
-                  <img src={triste} alt="emoji triste" className="pessimo" onClick={this.add_suggestion_customer_expectations} />
-                  <img src={insatisfeito} alt="emoji confuso" className="insatisfeito" onClick={this.add_suggestion_customer_expectations} />
-                  <img src={neutro} alt="emoji neutro" className="neutro" onClick={this.add_suggestion_customer_expectations} />
-                  <img src={feliz} alt="emoji feliz" className="bom" onClick={this.add_suggestion_customer_expectations} />
-                  <img src={sorridente} alt="emoji sorridente" className="excelente" onClick={this.add_suggestion_customer_expectations} />
+                <div className="emojis-box box-10">
+                  <img src={triste} alt="emoji triste" className="pessimo" id="p10" onClick={this.add_suggestion_customer_expectations} />
+                  <img src={insatisfeito} alt="emoji confuso" className="insatisfeito" id="i10" onClick={this.add_suggestion_customer_expectations} />
+                  <img src={neutro} alt="emoji neutro" className="neutro" id="n10" onClick={this.add_suggestion_customer_expectations} />
+                  <img src={feliz} alt="emoji feliz" className="bom" id="f10" onClick={this.add_suggestion_customer_expectations} />
+                  <img src={sorridente} alt="emoji sorridente" className="excelente" id="s10" onClick={this.add_suggestion_customer_expectations} />
                 </div>
               </li> <br />
               <li>
                 <h3>Qual a probabilidade de você fazer novas compras na Info Store?</h3>
-                <div className="emojis-box">
-                  <img src={triste} alt="emoji triste" className="pessimo" onClick={this.add_suggestion_new_purchases} />
-                  <img src={insatisfeito} alt="emoji confuso" className="insatisfeito" onClick={this.add_suggestion_new_purchases} />
-                  <img src={neutro} alt="emoji neutro" className="neutro" onClick={this.add_suggestion_new_purchases} />
-                  <img src={feliz} alt="emoji feliz" className="bom" onClick={this.add_suggestion_new_purchases} />
-                  <img src={sorridente} alt="emoji sorridente" className="excelente" onClick={this.add_suggestion_new_purchases} />
+                <div className="emojis-box box-11">
+                  <img src={triste} alt="emoji triste" className="pessimo" id="p11" onClick={this.add_suggestion_new_purchases} />
+                  <img src={insatisfeito} alt="emoji confuso" className="insatisfeito" id="i11" onClick={this.add_suggestion_new_purchases} />
+                  <img src={neutro} alt="emoji neutro" className="neutro" id="n11" onClick={this.add_suggestion_new_purchases} />
+                  <img src={feliz} alt="emoji feliz" className="bom" id="f11" onClick={this.add_suggestion_new_purchases} />
+                  <img src={sorridente} alt="emoji sorridente" id="s11" className="excelente" onClick={this.add_suggestion_new_purchases} />
                 </div>
               </li> <br />
               <li>
                 <h3>O quanto você recomendaria a empresa Info Store para seus amigos e/ou parentes?</h3>
-                <div className="emojis-box">
-                  <img src={triste} alt="emoji triste" className="pessimo" onClick={this.add_suggestion_recommendation} />
-                  <img src={insatisfeito} alt="emoji confuso" className="insatisfeito" onClick={this.add_suggestion_recommendation} />
-                  <img src={neutro} alt="emoji neutro" className="neutro" onClick={this.add_suggestion_recommendation} />
-                  <img src={feliz} alt="emoji feliz" className="bom" onClick={this.add_suggestion_recommendation} />
-                  <img src={sorridente} alt="emoji sorridente" className="excelente" onClick={this.add_suggestion_recommendation} />
+                <div className="emojis-box box-12">
+                  <img src={triste} alt="emoji triste" className="pessimo" id="p12" onClick={this.add_suggestion_recommendation} />
+                  <img src={insatisfeito} alt="emoji confuso" className="insatisfeito" id="i12" onClick={this.add_suggestion_recommendation} />
+                  <img src={neutro} alt="emoji neutro" className="neutro" id="n12" onClick={this.add_suggestion_recommendation} />
+                  <img src={feliz} alt="emoji feliz" className="bom" id="f12" onClick={this.add_suggestion_recommendation} />
+                  <img src={sorridente} alt="emoji sorridente" className="excelente" id="s12" onClick={this.add_suggestion_recommendation} />
                 </div>
               </li> <br />
               <li>
